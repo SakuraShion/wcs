@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsMachineTaskMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsMachineTask">
+            <id property="task_id" column="task_id" jdbcType="INTEGER"/>
+            <result property="product_type" column="product_type" jdbcType="INTEGER"/>
+            <result property="start_station" column="start_station" jdbcType="VARCHAR"/>
+            <result property="end_station" column="end_station" jdbcType="VARCHAR"/>
+            <result property="cargo_count" column="cargo_count" jdbcType="INTEGER"/>
+            <result property="task_status" column="task_status" jdbcType="INTEGER"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="machine_no" column="machine_no" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        task_id,product_type,start_station,
+        end_station,cargo_count,task_status,
+        create_time,update_time,machine_no
+    </sql>
+</mapper>

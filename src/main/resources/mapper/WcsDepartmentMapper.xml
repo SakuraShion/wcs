@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsDepartmentMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsDepartment">
+            <result property="sector_id" column="sector_id" jdbcType="VARCHAR"/>
+            <result property="sector_name" column="sector_name" jdbcType="VARCHAR"/>
+            <result property="sector_action" column="sector_action" jdbcType="VARCHAR"/>
+            <result property="sector_Level" column="sector_Level" jdbcType="VARCHAR"/>
+            <result property="is_leaf" column="is_leaf" jdbcType="VARCHAR"/>
+            <result property="root_id" column="root_id" jdbcType="VARCHAR"/>
+            <result property="parents_id" column="parents_id" jdbcType="VARCHAR"/>
+            <result property="display_order" column="display_order" jdbcType="VARCHAR"/>
+            <result property="sector_seq" column="sector_seq" jdbcType="VARCHAR"/>
+            <result property="insert_ymd" column="insert_ymd" jdbcType="VARCHAR"/>
+            <result property="insert_id" column="insert_id" jdbcType="VARCHAR"/>
+            <result property="update_ymd" column="update_ymd" jdbcType="VARCHAR"/>
+            <result property="update_id" column="update_id" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        sector_id,sector_name,sector_action,
+        sector_Level,is_leaf,root_id,
+        parents_id,display_order,sector_seq,
+        insert_ymd,insert_id,update_ymd,
+        update_id
+    </sql>
+</mapper>

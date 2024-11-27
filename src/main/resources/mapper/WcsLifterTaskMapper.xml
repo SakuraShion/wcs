@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsLifterTaskMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsLifterTask">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="lifter_name" column="lifter_name" jdbcType="VARCHAR"/>
+            <result property="task_id" column="task_id" jdbcType="INTEGER"/>
+            <result property="lifter_location" column="lifter_location" jdbcType="VARCHAR"/>
+            <result property="start_node" column="start_node" jdbcType="VARCHAR"/>
+            <result property="end_node" column="end_node" jdbcType="VARCHAR"/>
+            <result property="lifter_mode" column="lifter_mode" jdbcType="INTEGER"/>
+            <result property="task_obj_type" column="task_obj_type" jdbcType="INTEGER"/>
+            <result property="task_obj_id" column="task_obj_id" jdbcType="INTEGER"/>
+            <result property="lifter_task_process" column="lifter_task_process" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,lifter_name,task_id,
+        lifter_location,start_node,end_node,
+        lifter_mode,task_obj_type,task_obj_id,
+        lifter_task_process
+    </sql>
+</mapper>

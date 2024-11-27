@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsScadaMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsScada">
+            <id property="scada_id" column="scada_id" jdbcType="INTEGER"/>
+            <result property="rgv_no" column="rgv_no" jdbcType="INTEGER"/>
+            <result property="car_status" column="car_status" jdbcType="INTEGER"/>
+            <result property="run_time" column="run_time" jdbcType="INTEGER"/>
+            <result property="driving_speed" column="driving_speed" jdbcType="INTEGER"/>
+            <result property="obstacle_ahead" column="obstacle_ahead" jdbcType="INTEGER"/>
+            <result property="driving_volt" column="driving_volt" jdbcType="INTEGER"/>
+            <result property="driving_curr" column="driving_curr" jdbcType="INTEGER"/>
+            <result property="tray_obsta_dis" column="tray_obsta_dis" jdbcType="INTEGER"/>
+            <result property="suround_obsta_dis" column="suround_obsta_dis" jdbcType="INTEGER"/>
+            <result property="hydraulic_speed" column="hydraulic_speed" jdbcType="INTEGER"/>
+            <result property="hydra_oil_temp" column="hydra_oil_temp" jdbcType="INTEGER"/>
+            <result property="hydra_drive_volt" column="hydra_drive_volt" jdbcType="INTEGER"/>
+            <result property="hydra_drive_curr" column="hydra_drive_curr" jdbcType="INTEGER"/>
+            <result property="single_battery_volt1" column="single_battery_volt1" jdbcType="INTEGER"/>
+            <result property="single_battery_volt2" column="single_battery_volt2" jdbcType="INTEGER"/>
+            <result property="single_battery_volt3" column="single_battery_volt3" jdbcType="INTEGER"/>
+            <result property="single_battery_volt4" column="single_battery_volt4" jdbcType="INTEGER"/>
+            <result property="single_battery_volt5" column="single_battery_volt5" jdbcType="INTEGER"/>
+            <result property="single_battery_volt6" column="single_battery_volt6" jdbcType="INTEGER"/>
+            <result property="single_battery_volt7" column="single_battery_volt7" jdbcType="INTEGER"/>
+            <result property="single_battery_volt8" column="single_battery_volt8" jdbcType="INTEGER"/>
+            <result property="single_battery_volt9" column="single_battery_volt9" jdbcType="INTEGER"/>
+            <result property="single_battery_volt10" column="single_battery_volt10" jdbcType="INTEGER"/>
+            <result property="single_battery_volt11" column="single_battery_volt11" jdbcType="INTEGER"/>
+            <result property="single_battery_volt12" column="single_battery_volt12" jdbcType="INTEGER"/>
+            <result property="single_battery_volt13" column="single_battery_volt13" jdbcType="INTEGER"/>
+            <result property="single_battery_volt14" column="single_battery_volt14" jdbcType="INTEGER"/>
+            <result property="single_battery_volt15" column="single_battery_volt15" jdbcType="INTEGER"/>
+            <result property="single_battery_volt16" column="single_battery_volt16" jdbcType="INTEGER"/>
+            <result property="single_battery_volt17" column="single_battery_volt17" jdbcType="INTEGER"/>
+            <result property="single_battery_volt18" column="single_battery_volt18" jdbcType="INTEGER"/>
+            <result property="single_battery_volt19" column="single_battery_volt19" jdbcType="INTEGER"/>
+            <result property="single_battery_volt20" column="single_battery_volt20" jdbcType="INTEGER"/>
+            <result property="single_battery_volt21" column="single_battery_volt21" jdbcType="INTEGER"/>
+            <result property="single_battery_volt22" column="single_battery_volt22" jdbcType="INTEGER"/>
+            <result property="single_battery_volt23" column="single_battery_volt23" jdbcType="INTEGER"/>
+            <result property="single_battery_volt24" column="single_battery_volt24" jdbcType="INTEGER"/>
+            <result property="single_battery_volt25" column="single_battery_volt25" jdbcType="INTEGER"/>
+            <result property="single_battery_volt26" column="single_battery_volt26" jdbcType="INTEGER"/>
+            <result property="single_battery_volt27" column="single_battery_volt27" jdbcType="INTEGER"/>
+            <result property="single_battery_volt28" column="single_battery_volt28" jdbcType="INTEGER"/>
+            <result property="single_battery_volt29" column="single_battery_volt29" jdbcType="INTEGER"/>
+            <result property="single_battery_volt30" column="single_battery_volt30" jdbcType="INTEGER"/>
+            <result property="single_battery_volt31" column="single_battery_volt31" jdbcType="INTEGER"/>
+            <result property="single_battery_volt32" column="single_battery_volt32" jdbcType="INTEGER"/>
+            <result property="single_battery_volt33" column="single_battery_volt33" jdbcType="INTEGER"/>
+            <result property="single_battery_volt34" column="single_battery_volt34" jdbcType="INTEGER"/>
+            <result property="single_battery_volt35" column="single_battery_volt35" jdbcType="INTEGER"/>
+            <result property="single_battery_volt36" column="single_battery_volt36" jdbcType="INTEGER"/>
+            <result property="single_battery_volt37" column="single_battery_volt37" jdbcType="INTEGER"/>
+            <result property="single_battery_volt38" column="single_battery_volt38" jdbcType="INTEGER"/>
+            <result property="single_battery_volt39" column="single_battery_volt39" jdbcType="INTEGER"/>
+            <result property="single_battery_volt40" column="single_battery_volt40" jdbcType="INTEGER"/>
+            <result property="single_battery_volt41" column="single_battery_volt41" jdbcType="INTEGER"/>
+            <result property="single_battery_volt42" column="single_battery_volt42" jdbcType="INTEGER"/>
+            <result property="single_battery_volt43" column="single_battery_volt43" jdbcType="INTEGER"/>
+            <result property="single_battery_volt44" column="single_battery_volt44" jdbcType="INTEGER"/>
+            <result property="single_battery_volt45" column="single_battery_volt45" jdbcType="INTEGER"/>
+            <result property="single_battery_volt46" column="single_battery_volt46" jdbcType="INTEGER"/>
+            <result property="single_battery_volt47" column="single_battery_volt47" jdbcType="INTEGER"/>
+            <result property="single_battery_volt48" column="single_battery_volt48" jdbcType="INTEGER"/>
+            <result property="single_battery_volt49" column="single_battery_volt49" jdbcType="INTEGER"/>
+            <result property="single_battery_volt50" column="single_battery_volt50" jdbcType="INTEGER"/>
+            <result property="single_battery_volt51" column="single_battery_volt51" jdbcType="INTEGER"/>
+            <result property="single_battery_volt52" column="single_battery_volt52" jdbcType="INTEGER"/>
+            <result property="single_battery_volt53" column="single_battery_volt53" jdbcType="INTEGER"/>
+            <result property="single_battery_volt54" column="single_battery_volt54" jdbcType="INTEGER"/>
+            <result property="single_battery_volt55" column="single_battery_volt55" jdbcType="INTEGER"/>
+            <result property="single_battery_volt56" column="single_battery_volt56" jdbcType="INTEGER"/>
+            <result property="single_battery_volt57" column="single_battery_volt57" jdbcType="INTEGER"/>
+            <result property="single_battery_volt58" column="single_battery_volt58" jdbcType="INTEGER"/>
+            <result property="single_battery_volt59" column="single_battery_volt59" jdbcType="INTEGER"/>
+            <result property="single_battery_volt60" column="single_battery_volt60" jdbcType="INTEGER"/>
+            <result property="min_volt_cell_num" column="min_volt_cell_num" jdbcType="INTEGER"/>
+            <result property="max_volt_cell_num" column="max_volt_cell_num" jdbcType="INTEGER"/>
+            <result property="max_volt_differ" column="max_volt_differ" jdbcType="INTEGER"/>
+            <result property="total_volt" column="total_volt" jdbcType="INTEGER"/>
+            <result property="battery_open_charge_curr" column="battery_open_charge_curr" jdbcType="INTEGER"/>
+            <result property="battery_close_charge_curr" column="battery_close_charge_curr" jdbcType="INTEGER"/>
+            <result property="left_battery_ele" column="left_battery_ele" jdbcType="INTEGER"/>
+            <result property="battery_temp1" column="battery_temp1" jdbcType="INTEGER"/>
+            <result property="battery_temp2" column="battery_temp2" jdbcType="INTEGER"/>
+            <result property="battery_temp3" column="battery_temp3" jdbcType="INTEGER"/>
+            <result property="battery_temp4" column="battery_temp4" jdbcType="INTEGER"/>
+            <result property="battery_temp5" column="battery_temp5" jdbcType="INTEGER"/>
+            <result property="battery_temp6" column="battery_temp6" jdbcType="INTEGER"/>
+            <result property="battery_temp7" column="battery_temp7" jdbcType="INTEGER"/>
+            <result property="battery_temp8" column="battery_temp8" jdbcType="INTEGER"/>
+            <result property="balan_resist_temp1" column="balan_resist_temp1" jdbcType="INTEGER"/>
+            <result property="balan_resist_temp2" column="balan_resist_temp2" jdbcType="INTEGER"/>
+            <result property="mos_temp1" column="mos_temp1" jdbcType="INTEGER"/>
+            <result property="mos_temp2" column="mos_temp2" jdbcType="INTEGER"/>
+            <result property="cycle_count" column="cycle_count" jdbcType="INTEGER"/>
+            <result property="error_msg" column="error_msg" jdbcType="INTEGER"/>
+            <result property="warning_msg" column="warning_msg" jdbcType="INTEGER"/>
+            <result property="travel_distance" column="travel_distance" jdbcType="INTEGER"/>
+            <result property="travel_drive_err_count" column="travel_drive_err_count" jdbcType="INTEGER"/>
+            <result property="travel_drive_exec_count" column="travel_drive_exec_count" jdbcType="INTEGER"/>
+            <result property="plt_code_scanner_status" column="plt_code_scanner_status" jdbcType="INTEGER"/>
+            <result property="oil_drive_Exec_count" column="oil_drive_Exec_count" jdbcType="INTEGER"/>
+            <result property="oil_drive_err_count" column="oil_drive_err_count" jdbcType="INTEGER"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        scada_id,rgv_no,car_status,
+        run_time,driving_speed,obstacle_ahead,
+        driving_volt,driving_curr,tray_obsta_dis,
+        suround_obsta_dis,hydraulic_speed,hydra_oil_temp,
+        hydra_drive_volt,hydra_drive_curr,single_battery_volt1,
+        single_battery_volt2,single_battery_volt3,single_battery_volt4,
+        single_battery_volt5,single_battery_volt6,single_battery_volt7,
+        single_battery_volt8,single_battery_volt9,single_battery_volt10,
+        single_battery_volt11,single_battery_volt12,single_battery_volt13,
+        single_battery_volt14,single_battery_volt15,single_battery_volt16,
+        single_battery_volt17,single_battery_volt18,single_battery_volt19,
+        single_battery_volt20,single_battery_volt21,single_battery_volt22,
+        single_battery_volt23,single_battery_volt24,single_battery_volt25,
+        single_battery_volt26,single_battery_volt27,single_battery_volt28,
+        single_battery_volt29,single_battery_volt30,single_battery_volt31,
+        single_battery_volt32,single_battery_volt33,single_battery_volt34,
+        single_battery_volt35,single_battery_volt36,single_battery_volt37,
+        single_battery_volt38,single_battery_volt39,single_battery_volt40,
+        single_battery_volt41,single_battery_volt42,single_battery_volt43,
+        single_battery_volt44,single_battery_volt45,single_battery_volt46,
+        single_battery_volt47,single_battery_volt48,single_battery_volt49,
+        single_battery_volt50,single_battery_volt51,single_battery_volt52,
+        single_battery_volt53,single_battery_volt54,single_battery_volt55,
+        single_battery_volt56,single_battery_volt57,single_battery_volt58,
+        single_battery_volt59,single_battery_volt60,min_volt_cell_num,
+        max_volt_cell_num,max_volt_differ,total_volt,
+        battery_open_charge_curr,battery_close_charge_curr,left_battery_ele,
+        battery_temp1,battery_temp2,battery_temp3,
+        battery_temp4,battery_temp5,battery_temp6,
+        battery_temp7,battery_temp8,balan_resist_temp1,
+        balan_resist_temp2,mos_temp1,mos_temp2,
+        cycle_count,error_msg,warning_msg,
+        travel_distance,travel_drive_err_count,travel_drive_exec_count,
+        plt_code_scanner_status,oil_drive_Exec_count,oil_drive_err_count,
+        update_by,update_time,create_by,
+        create_time,remark
+    </sql>
+</mapper>

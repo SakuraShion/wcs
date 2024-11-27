@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsSeerTaskMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsSeerTask">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="task_id" column="task_id" jdbcType="VARCHAR"/>
+            <result property="process" column="process" jdbcType="INTEGER"/>
+            <result property="start_point" column="start_point" jdbcType="VARCHAR"/>
+            <result property="end_point" column="end_point" jdbcType="VARCHAR"/>
+            <result property="start_out_point" column="start_out_point" jdbcType="VARCHAR"/>
+            <result property="end_out_point" column="end_out_point" jdbcType="VARCHAR"/>
+            <result property="barcode" column="barcode" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="end_time" column="end_time" jdbcType="TIMESTAMP"/>
+            <result property="start_operation" column="start_operation" jdbcType="VARCHAR"/>
+            <result property="end_operation" column="end_operation" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,task_id,process,
+        start_point,end_point,start_out_point,
+        end_out_point,barcode,create_time,
+        end_time,start_operation,end_operation
+    </sql>
+</mapper>

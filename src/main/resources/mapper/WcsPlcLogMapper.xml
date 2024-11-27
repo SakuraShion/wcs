@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsPlcLogMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsPlcLog">
+            <id property="plc_log_id" column="plc_log_id" jdbcType="INTEGER"/>
+            <result property="device_name" column="device_name" jdbcType="VARCHAR"/>
+            <result property="plc_method_detail" column="plc_method_detail" jdbcType="VARCHAR"/>
+            <result property="send_time" column="send_time" jdbcType="TIMESTAMP"/>
+            <result property="plc_send_params" column="plc_send_params" jdbcType="VARCHAR"/>
+            <result property="plc_return_params" column="plc_return_params" jdbcType="VARCHAR"/>
+            <result property="use_time" column="use_time" jdbcType="INTEGER"/>
+            <result property="task_id" column="task_id" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        plc_log_id,device_name,plc_method_detail,
+        send_time,plc_send_params,plc_return_params,
+        use_time,task_id,remark,
+        create_by,create_time,update_by,
+        update_time
+    </sql>
+</mapper>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsDeviceTaskInfoMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsDeviceTaskInfo">
+            <id property="device_task_info_id" column="device_task_info_id" jdbcType="INTEGER"/>
+            <result property="exec_today_task_time" column="exec_today_task_time" jdbcType="BIGINT"/>
+            <result property="cur_date" column="cur_date" jdbcType="TIMESTAMP"/>
+            <result property="exec_all_task_time" column="exec_all_task_time" jdbcType="BIGINT"/>
+            <result property="exec_task_num" column="exec_task_num" jdbcType="INTEGER"/>
+            <result property="series" column="series" jdbcType="VARCHAR"/>
+            <result property="device_type" column="device_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        device_task_info_id,exec_today_task_time,cur_date,
+        exec_all_task_time,exec_task_num,series,
+        device_type
+    </sql>
+</mapper>

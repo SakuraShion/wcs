@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsNodeMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsNode">
+            <id property="node_id" column="node_id" jdbcType="INTEGER"/>
+            <result property="grid_id" column="grid_id" jdbcType="VARCHAR"/>
+            <result property="grid_status" column="grid_status" jdbcType="VARCHAR"/>
+            <result property="grid_type" column="grid_type" jdbcType="VARCHAR"/>
+            <result property="gridx" column="gridx" jdbcType="INTEGER"/>
+            <result property="gridy" column="gridy" jdbcType="INTEGER"/>
+            <result property="gridz" column="gridz" jdbcType="INTEGER"/>
+            <result property="is_block" column="is_block" jdbcType="BIT"/>
+            <result property="offsetx" column="offsetx" jdbcType="INTEGER"/>
+            <result property="offsety" column="offsety" jdbcType="INTEGER"/>
+            <result property="can_to_down" column="can_to_down" jdbcType="BIT"/>
+            <result property="can_to_left" column="can_to_left" jdbcType="BIT"/>
+            <result property="can_to_right" column="can_to_right" jdbcType="BIT"/>
+            <result property="can_to_up" column="can_to_up" jdbcType="BIT"/>
+            <result property="ground_code" column="ground_code" jdbcType="VARCHAR"/>
+            <result property="pallet_code" column="pallet_code" jdbcType="VARCHAR"/>
+            <result property="road_type" column="road_type" jdbcType="VARCHAR"/>
+            <result property="road_no" column="road_no" jdbcType="VARCHAR"/>
+            <result property="zone_id" column="zone_id" jdbcType="INTEGER"/>
+            <result property="can_to_stop" column="can_to_stop" jdbcType="BIT"/>
+            <result property="single_no" column="single_no" jdbcType="VARCHAR"/>
+            <result property="single_order" column="single_order" jdbcType="VARCHAR"/>
+            <result property="is_door" column="is_door" jdbcType="BIT"/>
+            <result property="limit_rgv_count" column="limit_rgv_count" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="run_up_for_ground_code_status" column="run_up_for_ground_code_status" jdbcType="INTEGER"/>
+            <result property="run_down_for_ground_code_status" column="run_down_for_ground_code_status" jdbcType="INTEGER"/>
+            <result property="run_left_for_ground_code_status" column="run_left_for_ground_code_status" jdbcType="INTEGER"/>
+            <result property="run_right_for_ground_code_status" column="run_right_for_ground_code_status" jdbcType="INTEGER"/>
+            <result property="up_calibration_time" column="up_calibration_time" jdbcType="INTEGER"/>
+            <result property="down_calibration_time" column="down_calibration_time" jdbcType="INTEGER"/>
+            <result property="left_calibration_time" column="left_calibration_time" jdbcType="INTEGER"/>
+            <result property="right_calibration_time" column="right_calibration_time" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        node_id,grid_id,grid_status,
+        grid_type,gridx,gridy,
+        gridz,is_block,offsetx,
+        offsety,can_to_down,can_to_left,
+        can_to_right,can_to_up,ground_code,
+        pallet_code,road_type,road_no,
+        zone_id,can_to_stop,single_no,
+        single_order,is_door,limit_rgv_count,
+        remark,update_by,update_time,
+        create_by,create_time,run_up_for_ground_code_status,
+        run_down_for_ground_code_status,run_left_for_ground_code_status,run_right_for_ground_code_status,
+        up_calibration_time,down_calibration_time,left_calibration_time,
+        right_calibration_time
+    </sql>
+</mapper>

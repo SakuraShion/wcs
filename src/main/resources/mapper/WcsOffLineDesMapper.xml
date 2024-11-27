@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsOffLineDesMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsOffLineDes">
+            <id property="off_line_des_id" column="off_line_des_id" jdbcType="INTEGER"/>
+            <result property="off_line_start_date" column="off_line_start_date" jdbcType="TIMESTAMP"/>
+            <result property="off_line_end_date" column="off_line_end_date" jdbcType="TIMESTAMP"/>
+            <result property="series" column="series" jdbcType="VARCHAR"/>
+            <result property="device_type" column="device_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        off_line_des_id,off_line_start_date,off_line_end_date,
+        series,device_type
+    </sql>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsPortMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsPort">
+            <id property="port_id" column="port_id" jdbcType="INTEGER"/>
+            <result property="port_name" column="port_name" jdbcType="VARCHAR"/>
+            <result property="port_mode" column="port_mode" jdbcType="INTEGER"/>
+            <result property="scan_name" column="scan_name" jdbcType="VARCHAR"/>
+            <result property="weight_name" column="weight_name" jdbcType="VARCHAR"/>
+            <result property="shape_name" column="shape_name" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="port_code" column="port_code" jdbcType="VARCHAR"/>
+            <result property="direction" column="direction" jdbcType="INTEGER"/>
+            <result property="cargo_time" column="cargo_time" jdbcType="INTEGER"/>
+            <result property="stations" column="stations" jdbcType="VARCHAR"/>
+            <result property="control_model" column="control_model" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="CHAR"/>
+            <result property="connect_mode" column="connect_mode" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        port_id,port_name,port_mode,
+        scan_name,weight_name,shape_name,
+        update_time,create_by,create_time,
+        remark,update_by,port_code,
+        direction,cargo_time,stations,
+        control_model,status,connect_mode
+    </sql>
+</mapper>

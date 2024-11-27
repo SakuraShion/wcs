@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsWarehouseMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsWarehouse">
+            <id property="warehouse_id" column="warehouse_id" jdbcType="INTEGER"/>
+            <result property="warehouse_name" column="warehouse_name" jdbcType="VARCHAR"/>
+            <result property="map_version" column="map_version" jdbcType="INTEGER"/>
+            <result property="map_direction" column="map_direction" jdbcType="INTEGER"/>
+            <result property="map_rotate" column="map_rotate" jdbcType="INTEGER"/>
+            <result property="station_ip" column="station_ip" jdbcType="VARCHAR"/>
+            <result property="station_port" column="station_port" jdbcType="VARCHAR"/>
+            <result property="wms_ip" column="wms_ip" jdbcType="VARCHAR"/>
+            <result property="wms_port" column="wms_port" jdbcType="VARCHAR"/>
+            <result property="more_for_one" column="more_for_one" jdbcType="INTEGER"/>
+            <result property="status" column="status" jdbcType="CHAR"/>
+            <result property="priority_mode" column="priority_mode" jdbcType="INTEGER"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="warehouse_code" column="warehouse_code" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="single_rgv_flag" column="single_rgv_flag" jdbcType="BIT"/>
+            <result property="free_location_flag" column="free_location_flag" jdbcType="BIT"/>
+            <result property="change_end_flag" column="change_end_flag" jdbcType="VARCHAR"/>
+            <result property="battery_time" column="battery_time" jdbcType="INTEGER"/>
+            <result property="rgv_max_calibration_time" column="rgv_max_calibration_time" jdbcType="INTEGER"/>
+            <result property="taskdb_check_time" column="taskdb_check_time" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        warehouse_id,warehouse_name,map_version,
+        map_direction,map_rotate,station_ip,
+        station_port,wms_ip,wms_port,
+        more_for_one,status,priority_mode,
+        create_time,warehouse_code,create_by,
+        update_by,single_rgv_flag,free_location_flag,
+        change_end_flag,battery_time,rgv_max_calibration_time,
+        taskdb_check_time
+    </sql>
+</mapper>

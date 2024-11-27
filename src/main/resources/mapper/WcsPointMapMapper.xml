@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsPointMapMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsPointMap">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="map_name" column="map_name" jdbcType="VARCHAR"/>
+            <result property="wms_point" column="wms_point" jdbcType="VARCHAR"/>
+            <result property="plc_point" column="plc_point" jdbcType="VARCHAR"/>
+            <result property="agv_point" column="agv_point" jdbcType="VARCHAR"/>
+            <result property="type" column="type" jdbcType="INTEGER"/>
+            <result property="map_node" column="map_node" jdbcType="VARCHAR"/>
+            <result property="direction" column="direction" jdbcType="INTEGER"/>
+            <result property="district" column="district" jdbcType="VARCHAR"/>
+            <result property="near_point" column="near_point" jdbcType="VARCHAR"/>
+            <result property="lock_Obj" column="lock_Obj" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,map_name,wms_point,
+        plc_point,agv_point,type,
+        map_node,direction,district,
+        near_point,lock_Obj
+    </sql>
+</mapper>

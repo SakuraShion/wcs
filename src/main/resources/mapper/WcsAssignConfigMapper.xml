@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsAssignConfigMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsAssignConfig">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="floor" column="floor" jdbcType="INTEGER"/>
+            <result property="rgv_limit" column="rgv_limit" jdbcType="INTEGER"/>
+            <result property="average" column="average" jdbcType="INTEGER"/>
+            <result property="zone_id" column="zone_id" jdbcType="INTEGER"/>
+            <result property="move_rgv_type" column="move_rgv_type" jdbcType="INTEGER"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,floor,rgv_limit,
+        average,zone_id,move_rgv_type,
+        create_by,create_time,update_by,
+        update_time,remark
+    </sql>
+</mapper>

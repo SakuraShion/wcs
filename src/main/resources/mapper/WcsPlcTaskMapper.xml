@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsPlcTaskMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsPlcTask">
+            <id property="plc_task_id" column="plc_task_id" jdbcType="INTEGER"/>
+            <result property="task_no" column="task_no" jdbcType="INTEGER"/>
+            <result property="start_no" column="start_no" jdbcType="INTEGER"/>
+            <result property="end_no" column="end_no" jdbcType="INTEGER"/>
+            <result property="process" column="process" jdbcType="INTEGER"/>
+            <result property="current_no" column="current_no" jdbcType="INTEGER"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="exec_time" column="exec_time" jdbcType="TIMESTAMP"/>
+            <result property="finish_time" column="finish_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        plc_task_id,task_no,start_no,
+        end_no,process,current_no,
+        create_time,exec_time,finish_time
+    </sql>
+</mapper>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsPlcMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsPlc">
+            <id property="plc_id" column="plc_id" jdbcType="INTEGER"/>
+            <result property="plc_name" column="plc_name" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="CHAR"/>
+            <result property="plc_ip" column="plc_ip" jdbcType="VARCHAR"/>
+            <result property="plc_port" column="plc_port" jdbcType="INTEGER"/>
+            <result property="plc_start_num" column="plc_start_num" jdbcType="INTEGER"/>
+            <result property="plc_max_num" column="plc_max_num" jdbcType="INTEGER"/>
+            <result property="create_user" column="create_user" jdbcType="BIGINT"/>
+            <result property="insert_time" column="insert_time" jdbcType="TIMESTAMP"/>
+            <result property="plc_type" column="plc_type" jdbcType="INTEGER"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="disable" column="disable" jdbcType="CHAR"/>
+            <result property="plc_free_action" column="plc_free_action" jdbcType="INTEGER"/>
+            <result property="cargo_rgv" column="cargo_rgv" jdbcType="BIT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        plc_id,plc_name,status,
+        plc_ip,plc_port,plc_start_num,
+        plc_max_num,create_user,insert_time,
+        plc_type,update_time,create_by,
+        create_time,remark,update_by,
+        disable,plc_free_action,cargo_rgv
+    </sql>
+</mapper>

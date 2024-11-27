@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsDictionaryMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsDictionary">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="dic_type" column="dic_type" jdbcType="VARCHAR"/>
+            <result property="dis_des" column="dis_des" jdbcType="VARCHAR"/>
+            <result property="dis_val" column="dis_val" jdbcType="VARCHAR"/>
+            <result property="remark1" column="remark1" jdbcType="VARCHAR"/>
+            <result property="remark2" column="remark2" jdbcType="VARCHAR"/>
+            <result property="des" column="des" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,dic_type,dis_des,
+        dis_val,remark1,remark2,
+        des
+    </sql>
+</mapper>

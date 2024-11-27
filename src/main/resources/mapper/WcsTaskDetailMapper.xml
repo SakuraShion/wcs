@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsTaskDetailMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsTaskDetail">
+            <id property="detail_id" column="detail_id" jdbcType="INTEGER"/>
+            <result property="task_id" column="task_id" jdbcType="INTEGER"/>
+            <result property="process" column="process" jdbcType="VARCHAR"/>
+            <result property="parent_id" column="parent_id" jdbcType="VARCHAR"/>
+            <result property="start" column="start" jdbcType="VARCHAR"/>
+            <result property="ending" column="ending" jdbcType="VARCHAR"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="device_info" column="device_info" jdbcType="VARCHAR"/>
+            <result property="operation" column="operation" jdbcType="VARCHAR"/>
+            <result property="uuid" column="uuid" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        detail_id,task_id,process,
+        parent_id,start,ending,
+        status,remark,create_by,
+        create_time,update_by,update_time,
+        device_info,operation,uuid
+    </sql>
+</mapper>

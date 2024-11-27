@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.SysOperationLogMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.SysOperationLog">
+            <id property="operation_log_id" column="operation_log_id" jdbcType="BIGINT"/>
+            <result property="user_name" column="user_name" jdbcType="VARCHAR"/>
+            <result property="method" column="method" jdbcType="VARCHAR"/>
+            <result property="succeed" column="succeed" jdbcType="VARCHAR"/>
+            <result property="send_data" column="send_data" jdbcType="TIMESTAMP"/>
+            <result property="rece_data" column="rece_data" jdbcType="TIMESTAMP"/>
+            <result property="use_time" column="use_time" jdbcType="INTEGER"/>
+            <result property="operation_data" column="operation_data" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        operation_log_id,user_name,method,
+        succeed,send_data,rece_data,
+        use_time,operation_data
+    </sql>
+</mapper>

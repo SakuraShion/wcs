@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsInterfaceLogMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsInterfaceLog">
+            <id property="interface_log_id" column="interface_log_id" jdbcType="BIGINT"/>
+            <result property="task_id" column="task_id" jdbcType="INTEGER"/>
+            <result property="device_name" column="device_name" jdbcType="VARCHAR"/>
+            <result property="sender" column="sender" jdbcType="VARCHAR"/>
+            <result property="recipient" column="recipient" jdbcType="VARCHAR"/>
+            <result property="interface_method_des" column="interface_method_des" jdbcType="VARCHAR"/>
+            <result property="interface_params_in" column="interface_params_in" jdbcType="VARCHAR"/>
+            <result property="interface_params_ret" column="interface_params_ret" jdbcType="VARCHAR"/>
+            <result property="send_time" column="send_time" jdbcType="TIMESTAMP"/>
+            <result property="rece_time" column="rece_time" jdbcType="TIMESTAMP"/>
+            <result property="use_time" column="use_time" jdbcType="INTEGER"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        interface_log_id,task_id,device_name,
+        sender,recipient,interface_method_des,
+        interface_params_in,interface_params_ret,send_time,
+        rece_time,use_time,remark,
+        create_by,create_time,update_by,
+        update_time,status
+    </sql>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsDistrictMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsDistrict">
+            <id property="district_id" column="district_id" jdbcType="INTEGER"/>
+            <result property="district_name" column="district_name" jdbcType="VARCHAR"/>
+            <result property="map_version" column="map_version" jdbcType="INTEGER"/>
+            <result property="map_direction" column="map_direction" jdbcType="INTEGER"/>
+            <result property="map_rotate" column="map_rotate" jdbcType="INTEGER"/>
+            <result property="station_ip" column="station_ip" jdbcType="VARCHAR"/>
+            <result property="station_port" column="station_port" jdbcType="VARCHAR"/>
+            <result property="wms_ip" column="wms_ip" jdbcType="VARCHAR"/>
+            <result property="wms_port" column="wms_port" jdbcType="VARCHAR"/>
+            <result property="more_for_one" column="more_for_one" jdbcType="INTEGER"/>
+            <result property="insert_time" column="insert_time" jdbcType="TIMESTAMP"/>
+            <result property="is_accept" column="is_accept" jdbcType="TINYINT"/>
+            <result property="priority_mode" column="priority_mode" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        district_id,district_name,map_version,
+        map_direction,map_rotate,station_ip,
+        station_port,wms_ip,wms_port,
+        more_for_one,insert_time,is_accept,
+        priority_mode
+    </sql>
+</mapper>

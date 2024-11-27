@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsCodeMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsCode">
+            <id property="code_id" column="code_id" jdbcType="INTEGER"/>
+            <result property="code_hex" column="code_hex" jdbcType="VARCHAR"/>
+            <result property="code_dec" column="code_dec" jdbcType="VARCHAR"/>
+            <result property="code_desc" column="code_desc" jdbcType="VARCHAR"/>
+            <result property="code_type" column="code_type" jdbcType="INTEGER"/>
+            <result property="code_level" column="code_level" jdbcType="INTEGER"/>
+            <result property="solution" column="solution" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        code_id,code_hex,code_dec,
+        code_desc,code_type,code_level,
+        solution,create_by,create_time,
+        update_by,update_time,remark
+    </sql>
+</mapper>

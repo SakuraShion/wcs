@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsErrorDesMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsErrorDes">
+            <id property="error_des_id" column="error_des_id" jdbcType="INTEGER"/>
+            <result property="error_message" column="error_message" jdbcType="VARCHAR"/>
+            <result property="error_time" column="error_time" jdbcType="TIMESTAMP"/>
+            <result property="end_error_time" column="end_error_time" jdbcType="TIMESTAMP"/>
+            <result property="error_location" column="error_location" jdbcType="VARCHAR"/>
+            <result property="error_task_id" column="error_task_id" jdbcType="VARCHAR"/>
+            <result property="series" column="series" jdbcType="VARCHAR"/>
+            <result property="device_type" column="device_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        error_des_id,error_message,error_time,
+        end_error_time,error_location,error_task_id,
+        series,device_type
+    </sql>
+</mapper>

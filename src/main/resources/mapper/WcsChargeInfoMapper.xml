@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsChargeInfoMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsChargeInfo">
+            <id property="charge_info_id" column="charge_info_id" jdbcType="INTEGER"/>
+            <result property="charge_time" column="charge_time" jdbcType="INTEGER"/>
+            <result property="charge_start_time" column="charge_start_time" jdbcType="TIMESTAMP"/>
+            <result property="charge_start_soc" column="charge_start_soc" jdbcType="INTEGER"/>
+            <result property="charge_end_time" column="charge_end_time" jdbcType="TIMESTAMP"/>
+            <result property="charge_end_soc" column="charge_end_soc" jdbcType="INTEGER"/>
+            <result property="charge_error" column="charge_error" jdbcType="BIT"/>
+            <result property="charge_error_message" column="charge_error_message" jdbcType="VARCHAR"/>
+            <result property="series" column="series" jdbcType="VARCHAR"/>
+            <result property="device_type" column="device_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        charge_info_id,charge_time,charge_start_time,
+        charge_start_soc,charge_end_time,charge_end_soc,
+        charge_error,charge_error_message,series,
+        device_type
+    </sql>
+</mapper>

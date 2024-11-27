@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsConnectConfigMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsConnectConfig">
+            <id property="connect_id" column="connect_id" jdbcType="INTEGER"/>
+            <result property="connect_name" column="connect_name" jdbcType="VARCHAR"/>
+            <result property="pre_connect" column="pre_connect" jdbcType="VARCHAR"/>
+            <result property="suf_connect" column="suf_connect" jdbcType="VARCHAR"/>
+            <result property="connect_layer" column="connect_layer" jdbcType="INTEGER"/>
+            <result property="connect_type" column="connect_type" jdbcType="INTEGER"/>
+            <result property="port_code" column="port_code" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="connect_flag" column="connect_flag" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        connect_id,connect_name,pre_connect,
+        suf_connect,connect_layer,connect_type,
+        port_code,remark,create_by,
+        create_time,update_by,update_time,
+        connect_flag
+    </sql>
+</mapper>

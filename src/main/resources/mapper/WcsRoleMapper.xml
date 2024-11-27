@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsRoleMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsRole">
+            <id property="role_id" column="role_id" jdbcType="BIGINT"/>
+            <result property="role_name" column="role_name" jdbcType="VARCHAR"/>
+            <result property="role_key" column="role_key" jdbcType="VARCHAR"/>
+            <result property="role_sort" column="role_sort" jdbcType="INTEGER"/>
+            <result property="data_scope" column="data_scope" jdbcType="CHAR"/>
+            <result property="menu_check_strictly" column="menu_check_strictly" jdbcType="TINYINT"/>
+            <result property="dept_check_strictly" column="dept_check_strictly" jdbcType="TINYINT"/>
+            <result property="status" column="status" jdbcType="CHAR"/>
+            <result property="del_flag" column="del_flag" jdbcType="CHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        role_id,role_name,role_key,
+        role_sort,data_scope,menu_check_strictly,
+        dept_check_strictly,status,del_flag,
+        create_by,create_time,update_by,
+        update_time,remark
+    </sql>
+
+
+</mapper>

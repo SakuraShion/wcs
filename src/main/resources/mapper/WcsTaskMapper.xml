@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsTaskMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsTask">
+            <id property="task_Id" column="task_Id" jdbcType="INTEGER"/>
+            <result property="bar_code" column="bar_code" jdbcType="VARCHAR"/>
+            <result property="plc_id" column="plc_id" jdbcType="INTEGER"/>
+            <result property="commit_time" column="commit_time" jdbcType="TIMESTAMP"/>
+            <result property="complete_time" column="complete_time" jdbcType="TIMESTAMP"/>
+            <result property="end_node_str" column="end_node_str" jdbcType="VARCHAR"/>
+            <result property="execute_time" column="execute_time" jdbcType="TIMESTAMP"/>
+            <result property="rgv_progress" column="rgv_progress" jdbcType="INTEGER"/>
+            <result property="priority_code" column="priority_code" jdbcType="INTEGER"/>
+            <result property="start_node_str" column="start_node_str" jdbcType="VARCHAR"/>
+            <result property="plc_progress" column="plc_progress" jdbcType="INTEGER"/>
+            <result property="task_type" column="task_type" jdbcType="INTEGER"/>
+            <result property="wms_task_id" column="wms_task_id" jdbcType="VARCHAR"/>
+            <result property="pre_task_id" column="pre_task_id" jdbcType="INTEGER"/>
+            <result property="processing_rgv_no" column="processing_rgv_no" jdbcType="INTEGER"/>
+            <result property="task_status" column="task_status" jdbcType="INTEGER"/>
+            <result property="district" column="district" jdbcType="VARCHAR"/>
+            <result property="task_port_id" column="task_port_id" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="group_id" column="group_id" jdbcType="VARCHAR"/>
+            <result property="task_programme_grid_id" column="task_programme_grid_id" jdbcType="VARCHAR"/>
+            <result property="pre_processing_rgv_no" column="pre_processing_rgv_no" jdbcType="INTEGER"/>
+            <result property="to_start_time" column="to_start_time" jdbcType="INTEGER"/>
+            <result property="start_to_end_time" column="start_to_end_time" jdbcType="INTEGER"/>
+            <result property="allow_assignment_rgv" column="allow_assignment_rgv" jdbcType="BIT"/>
+            <result property="time_consuming" column="time_consuming" jdbcType="VARCHAR"/>
+            <result property="group_id_second" column="group_id_second" jdbcType="VARCHAR"/>
+            <result property="single_rgv_flag" column="single_rgv_flag" jdbcType="VARCHAR"/>
+            <result property="zone_id" column="zone_id" jdbcType="INTEGER"/>
+            <result property="tips" column="tips" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="lifter_path" column="lifter_path" jdbcType="VARCHAR"/>
+            <result property="node_limit_rgv_flag" column="node_limit_rgv_flag" jdbcType="INTEGER"/>
+            <result property="trans_end_node_limit_rgv_flag" column="trans_end_node_limit_rgv_flag" jdbcType="INTEGER"/>
+            <result property="original_end_node_str" column="original_end_node_str" jdbcType="VARCHAR"/>
+            <result property="path" column="path" jdbcType="VARCHAR"/>
+            <result property="connect_task_id" column="connect_task_id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        task_Id,bar_code,plc_id,
+        commit_time,complete_time,end_node_str,
+        execute_time,rgv_progress,priority_code,
+        start_node_str,plc_progress,task_type,
+        wms_task_id,pre_task_id,processing_rgv_no,
+        task_status,district,task_port_id,
+        update_time,group_id,task_programme_grid_id,
+        pre_processing_rgv_no,to_start_time,start_to_end_time,
+        allow_assignment_rgv,time_consuming,group_id_second,
+        single_rgv_flag,zone_id,tips,
+        remark,create_by,create_time,
+        update_by,lifter_path,node_limit_rgv_flag,
+        trans_end_node_limit_rgv_flag,original_end_node_str,path,
+        connect_task_id
+    </sql>
+</mapper>

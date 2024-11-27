@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsAgvTaskMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsAgvTask">
+            <id property="task_id" column="task_id" jdbcType="INTEGER"/>
+            <result property="task_pro" column="task_pro" jdbcType="INTEGER"/>
+            <result property="task_status" column="task_status" jdbcType="INTEGER"/>
+            <result property="priority" column="priority" jdbcType="INTEGER"/>
+            <result property="task_type" column="task_type" jdbcType="INTEGER"/>
+            <result property="pallet_code" column="pallet_code" jdbcType="VARCHAR"/>
+            <result property="start_point" column="start_point" jdbcType="VARCHAR"/>
+            <result property="start_pre_point" column="start_pre_point" jdbcType="VARCHAR"/>
+            <result property="end_point" column="end_point" jdbcType="VARCHAR"/>
+            <result property="end_pre_point" column="end_pre_point" jdbcType="VARCHAR"/>
+            <result property="wms_task_id" column="wms_task_id" jdbcType="VARCHAR"/>
+            <result property="district" column="district" jdbcType="VARCHAR"/>
+            <result property="need_report_wms" column="need_report_wms" jdbcType="BIT"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="execute_time" column="execute_time" jdbcType="TIMESTAMP"/>
+            <result property="complete_time" column="complete_time" jdbcType="TIMESTAMP"/>
+            <result property="report_time" column="report_time" jdbcType="TIMESTAMP"/>
+            <result property="rgv_task_end_node" column="rgv_task_end_node" jdbcType="VARCHAR"/>
+            <result property="agv_id" column="agv_id" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        task_id,task_pro,task_status,
+        priority,task_type,pallet_code,
+        start_point,start_pre_point,end_point,
+        end_pre_point,wms_task_id,district,
+        need_report_wms,create_time,execute_time,
+        complete_time,report_time,rgv_task_end_node,
+        agv_id
+    </sql>
+</mapper>

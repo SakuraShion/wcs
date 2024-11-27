@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsRgvMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsRgv">
+            <id property="rgv_id" column="rgv_id" jdbcType="INTEGER"/>
+            <result property="is_auto_charge" column="is_auto_charge" jdbcType="BIT"/>
+            <result property="auto_battery_size" column="auto_battery_size" jdbcType="INTEGER"/>
+            <result property="charge_location" column="charge_location" jdbcType="VARCHAR"/>
+            <result property="rgv_no" column="rgv_no" jdbcType="INTEGER"/>
+            <result property="alarm_battery_size" column="alarm_battery_size" jdbcType="INTEGER"/>
+            <result property="mileage" column="mileage" jdbcType="VARCHAR"/>
+            <result property="is_pass_floor" column="is_pass_floor" jdbcType="BIT"/>
+            <result property="max_battery_size" column="max_battery_size" jdbcType="INTEGER"/>
+            <result property="insert_time" column="insert_time" jdbcType="TIMESTAMP"/>
+            <result property="location" column="location" jdbcType="VARCHAR"/>
+            <result property="free_time" column="free_time" jdbcType="INTEGER"/>
+            <result property="free_location" column="free_location" jdbcType="VARCHAR"/>
+            <result property="x_region" column="x_region" jdbcType="VARCHAR"/>
+            <result property="y_region" column="y_region" jdbcType="VARCHAR"/>
+            <result property="z_region" column="z_region" jdbcType="VARCHAR"/>
+            <result property="rgv_ip" column="rgv_ip" jdbcType="VARCHAR"/>
+            <result property="rgv_port" column="rgv_port" jdbcType="INTEGER"/>
+            <result property="rgv_direction" column="rgv_direction" jdbcType="INTEGER"/>
+            <result property="rgv_mac" column="rgv_mac" jdbcType="VARCHAR"/>
+            <result property="rgv_ba_ip" column="rgv_ba_ip" jdbcType="VARCHAR"/>
+            <result property="speed" column="speed" jdbcType="INTEGER"/>
+            <result property="acc_speed" column="acc_speed" jdbcType="INTEGER"/>
+            <result property="pallet_up_time" column="pallet_up_time" jdbcType="INTEGER"/>
+            <result property="pallet_down_time" column="pallet_down_time" jdbcType="INTEGER"/>
+            <result property="direction_time" column="direction_time" jdbcType="INTEGER"/>
+            <result property="assign_battery_size" column="assign_battery_size" jdbcType="INTEGER"/>
+            <result property="online" column="online" jdbcType="BIT"/>
+            <result property="max_lock_num" column="max_lock_num" jdbcType="INTEGER"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="rgv_type" column="rgv_type" jdbcType="INTEGER"/>
+            <result property="battery_full_time" column="battery_full_time" jdbcType="TIMESTAMP"/>
+            <result property="is_calibration" column="is_calibration" jdbcType="BIT"/>
+            <result property="priority_mode" column="priority_mode" jdbcType="INTEGER"/>
+            <result property="code_calibration" column="code_calibration" jdbcType="BIT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        rgv_id,is_auto_charge,auto_battery_size,
+        charge_location,rgv_no,alarm_battery_size,
+        mileage,is_pass_floor,max_battery_size,
+        insert_time,location,free_time,
+        free_location,x_region,y_region,
+        z_region,rgv_ip,rgv_port,
+        rgv_direction,rgv_mac,rgv_ba_ip,
+        speed,acc_speed,pallet_up_time,
+        pallet_down_time,direction_time,assign_battery_size,
+        online,max_lock_num,update_time,
+        create_by,create_time,remark,
+        update_by,rgv_type,battery_full_time,
+        is_calibration,priority_mode,code_calibration
+    </sql>
+</mapper>

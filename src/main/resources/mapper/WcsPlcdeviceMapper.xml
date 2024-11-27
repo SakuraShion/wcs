@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsPlcdeviceMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsPlcdevice">
+            <id property="device_Id" column="device_Id" jdbcType="INTEGER"/>
+            <result property="location" column="location" jdbcType="INTEGER"/>
+            <result property="device_no" column="device_no" jdbcType="INTEGER"/>
+            <result property="device_location" column="device_location" jdbcType="VARCHAR"/>
+            <result property="device_name" column="device_name" jdbcType="VARCHAR"/>
+            <result property="device_type" column="device_type" jdbcType="INTEGER"/>
+            <result property="plc_lock_location" column="plc_lock_location" jdbcType="VARCHAR"/>
+            <result property="start_address" column="start_address" jdbcType="INTEGER"/>
+            <result property="insert_time" column="insert_time" jdbcType="TIMESTAMP"/>
+            <result property="plc_id" column="plc_id" jdbcType="INTEGER"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="create_user" column="create_user" jdbcType="VARCHAR"/>
+            <result property="district" column="district" jdbcType="VARCHAR"/>
+            <result property="cargo_rgv" column="cargo_rgv" jdbcType="BIT"/>
+            <result property="gridz_max" column="gridz_max" jdbcType="INTEGER"/>
+            <result property="gridz_relative" column="gridz_relative" jdbcType="INTEGER"/>
+            <result property="lock_device" column="lock_device" jdbcType="BIT"/>
+            <result property="status" column="status" jdbcType="CHAR"/>
+            <result property="task_no" column="task_no" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        device_Id,location,device_no,
+        device_location,device_name,device_type,
+        plc_lock_location,start_address,insert_time,
+        plc_id,update_time,create_by,
+        create_time,remark,update_by,
+        create_user,district,cargo_rgv,
+        gridz_max,gridz_relative,lock_device,
+        status,task_no
+    </sql>
+</mapper>

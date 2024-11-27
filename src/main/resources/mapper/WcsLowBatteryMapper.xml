@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsLowBatteryMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsLowBattery">
+            <id property="low_battery_id" column="low_battery_id" jdbcType="INTEGER"/>
+            <result property="bat_soc" column="bat_soc" jdbcType="INTEGER"/>
+            <result property="mark_low_soc" column="mark_low_soc" jdbcType="INTEGER"/>
+            <result property="low_time" column="low_time" jdbcType="TIMESTAMP"/>
+            <result property="recover_time" column="recover_time" jdbcType="TIMESTAMP"/>
+            <result property="series" column="series" jdbcType="VARCHAR"/>
+            <result property="device_type" column="device_type" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        low_battery_id,bat_soc,mark_low_soc,
+        low_time,recover_time,series,
+        device_type
+    </sql>
+</mapper>

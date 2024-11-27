@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.SysWmsUrlMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.SysWmsUrl">
+            <id property="url_id" column="url_id" jdbcType="INTEGER"/>
+            <result property="interface_name" column="interface_name" jdbcType="VARCHAR"/>
+            <result property="url_addr" column="url_addr" jdbcType="VARCHAR"/>
+            <result property="effect" column="effect" jdbcType="VARCHAR"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        url_id,interface_name,url_addr,
+        effect,create_by,create_time,
+        update_by,update_time,remark
+    </sql>
+</mapper>

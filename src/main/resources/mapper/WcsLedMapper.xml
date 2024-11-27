@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsLedMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsLed">
+            <id property="led_no" column="led_no" jdbcType="INTEGER"/>
+            <result property="led_ip" column="led_ip" jdbcType="VARCHAR"/>
+            <result property="led_port" column="led_port" jdbcType="INTEGER"/>
+            <result property="led_address" column="led_address" jdbcType="VARCHAR"/>
+            <result property="led_area" column="led_area" jdbcType="VARCHAR"/>
+            <result property="move_way" column="move_way" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        led_no,led_ip,led_port,
+        led_address,led_area,move_way
+    </sql>
+</mapper>

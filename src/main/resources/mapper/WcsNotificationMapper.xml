@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsNotificationMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsNotification">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="user_no" column="user_no" jdbcType="VARCHAR"/>
+            <result property="content" column="content" jdbcType="VARCHAR"/>
+            <result property="severity_level" column="severity_level" jdbcType="INTEGER"/>
+            <result property="is_read" column="is_read" jdbcType="TINYINT"/>
+            <result property="notification_type" column="notification_type" jdbcType="TINYINT"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,user_no,content,
+        severity_level,is_read,notification_type,
+        create_time,update_time,create_by,
+        update_by,remark
+    </sql>
+</mapper>

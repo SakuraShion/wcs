@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsHeartLogMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsHeartLog">
+            <id property="interface_log_id" column="interface_log_id" jdbcType="INTEGER"/>
+            <result property="device_name" column="device_name" jdbcType="VARCHAR"/>
+            <result property="rgv_location" column="rgv_location" jdbcType="VARCHAR"/>
+            <result property="rgv_current_segment" column="rgv_current_segment" jdbcType="INTEGER"/>
+            <result property="segment_end_location" column="segment_end_location" jdbcType="VARCHAR"/>
+            <result property="cur_barcode" column="cur_barcode" jdbcType="VARCHAR"/>
+            <result property="rgv_status" column="rgv_status" jdbcType="INTEGER"/>
+            <result property="pallet_status" column="pallet_status" jdbcType="INTEGER"/>
+            <result property="reserve_status" column="reserve_status" jdbcType="INTEGER"/>
+            <result property="drive_direction" column="drive_direction" jdbcType="INTEGER"/>
+            <result property="electric" column="electric" jdbcType="INTEGER"/>
+            <result property="send_time" column="send_time" jdbcType="TIMESTAMP"/>
+            <result property="rece_time" column="rece_time" jdbcType="TIMESTAMP"/>
+            <result property="use_time" column="use_time" jdbcType="INTEGER"/>
+            <result property="task_no" column="task_no" jdbcType="INTEGER"/>
+            <result property="task_type" column="task_type" jdbcType="INTEGER"/>
+            <result property="task_result" column="task_result" jdbcType="INTEGER"/>
+            <result property="cmd_no" column="cmd_no" jdbcType="INTEGER"/>
+            <result property="cmd_result" column="cmd_result" jdbcType="INTEGER"/>
+            <result property="cmd_execute_result" column="cmd_execute_result" jdbcType="INTEGER"/>
+            <result property="cmd_execute_result_param" column="cmd_execute_result_param" jdbcType="INTEGER"/>
+            <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+            <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+            <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="remark" column="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        interface_log_id,device_name,rgv_location,
+        rgv_current_segment,segment_end_location,cur_barcode,
+        rgv_status,pallet_status,reserve_status,
+        drive_direction,electric,send_time,
+        rece_time,use_time,task_no,
+        task_type,task_result,cmd_no,
+        cmd_result,cmd_execute_result,cmd_execute_result_param,
+        create_by,create_time,update_by,
+        update_time,remark
+    </sql>
+</mapper>

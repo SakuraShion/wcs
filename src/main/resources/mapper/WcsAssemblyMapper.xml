@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mywcs.mapper.WcsAssemblyMapper">
+
+    <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsAssembly">
+            <id property="control_id" column="control_id" jdbcType="VARCHAR"/>
+            <id property="prems" column="prems" jdbcType="VARCHAR"/>
+            <result property="operation_id" column="operation_id" jdbcType="VARCHAR"/>
+            <result property="assembly_type" column="assembly_type" jdbcType="VARCHAR"/>
+            <result property="assembly_des" column="assembly_des" jdbcType="VARCHAR"/>
+            <result property="insert_time" column="insert_time" jdbcType="TIMESTAMP"/>
+            <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+            <result property="reserve1" column="reserve1" jdbcType="VARCHAR"/>
+            <result property="reserve2" column="reserve2" jdbcType="VARCHAR"/>
+            <result property="reserve3" column="reserve3" jdbcType="VARCHAR"/>
+            <result property="menu_id" column="menu_id" jdbcType="VARCHAR"/>
+            <result property="url" column="url" jdbcType="VARCHAR"/>
+            <result property="parent_menu_id" column="parent_menu_id" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        control_id,prems,operation_id,
+        assembly_type,assembly_des,insert_time,
+        update_time,reserve1,reserve2,
+        reserve3,menu_id,url,
+        parent_menu_id
+    </sql>
+</mapper>
