@@ -14,12 +14,22 @@ import lombok.Data;
  */
 @TableName(value ="sys_dict_data")
 @Data
-public class SysDictData implements Serializable {
+public class SysDictData  implements Serializable {
     /**
      * 字典编码
      */
     @TableId(type = IdType.AUTO)
     private Long dict_code;
+
+    /**
+     * 备注
+     */
+    private String remark;
+
+    /**
+     * 字典名称
+     */
+    private String dict_name;
 
     /**
      * 字典排序
@@ -81,10 +91,6 @@ public class SysDictData implements Serializable {
      */
     private Date update_time;
 
-    /**
-     * 备注
-     */
-    private String remark;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;

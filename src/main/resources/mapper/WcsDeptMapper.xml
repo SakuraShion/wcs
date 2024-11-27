@@ -28,4 +28,13 @@
         del_flag,create_by,create_time,
         update_by,update_time
     </sql>
+
+    <select id="selectDeptByUser" resultMap="BaseResultMap">
+        SELECT * FROM `wcs_dept` where dept_id =#{dept_id}
+    </select>
+
+    <select id="selectList" resultMap="BaseResultMap">
+        select * from wcs_dept
+    </select>
+
 </mapper>

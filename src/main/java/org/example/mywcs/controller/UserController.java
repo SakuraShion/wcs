@@ -14,10 +14,9 @@ import org.example.mywcs.untils.R;
 import org.example.mywcs.untils.ThreadLocalUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
+
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -33,8 +32,8 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
     HashMap<String, Object> map = new HashMap<>();
-
-    private RedisTemplate<String, Object> redisTemplate;
+    @Autowired
+    RedisTemplate redisTemplate;
 
     private static final Log LOG = LogFactory.getLog(UserController.class);
     @Autowired
@@ -49,7 +48,7 @@ public class UserController {
     public R login(WcsUser wcsUser) {
         try {
             instance.add(Calendar.SECOND, 2);
-            String password = wcsUserService.selectPassword(wcsUser.getPassword());
+            String password = wcsUserService.selectPassword(wcsUser.getUser_name());
             if (password.equals(wcsUser.getPassword())) {
                 String token = JWT.create().withHeader(map).withClaim("userName", wcsUser.getUser_name())
                         .withClaim("password", wcsUser.getPassword())
@@ -63,7 +62,7 @@ public class UserController {
             }
             return R.error("登入失败，请检查账号或密码");
         } catch (Exception e) {
-            LOG.error("登入失败");
+            LOG.error("登入失败"+e);
             return R.error("登入失败");
         }
     }
@@ -84,7 +83,7 @@ public class UserController {
     @GetMapping("detail")
     public R getInfo() {
         //TODO Auto-generated
-        String userId = ThreadLocalUtil.getUserId();
+        //String userId = ThreadLocalUtil.getUserId();
         UserVo vo=wcsUserService.getDetails("1");
         return R.ok().put("userId", vo);
     }
@@ -92,14 +91,32 @@ public class UserController {
     @GetMapping("/getRouters")
     //TODO Auto-generated
     public R getRouters(){
-        String userId = ThreadLocalUtil.getUserId();
-        List<MenuNode> menuNodes=wcsUserService.getRouters("1");
-        return R.ok().put("menuNodes", menuNodes);
+//        String userId = ThreadLocalUtil.getUserId();
+        List<MenuNode> routers = wcsUserService.getRouters("1");
+        return R.ok().put("menuNodes", routers);
     }
 
     @GetMapping("/list")
     public R list(){
-        List<UserVo> wcsUsers=wcsUserService.list();
+        List<UserVo> wcsUsers=wcsUserService.listAll();
         return R.ok().put("list", wcsUsers);
+    }
+
+    @PostMapping("/addUser")
+    public R addUser(WcsUser wcsUser){
+        wcsUserService.save(wcsUser);
+        return R.ok();
+    }
+    @DeleteMapping("/deleteUser")
+    public R deleteUser(WcsUser wcsUser){
+        wcsUserService.save(wcsUser);
+        return R.ok();
+    }
+    @PostMapping("/resetPassword")
+    public R resetPassword(@RequestParam Long id, @RequestParam String password){
+        //String userId = ThreadLocalUtil.getUserId();
+        // TODO: 27/11/2024 reset password
+        wcsUserService.updatePassword(id, password);
+        return R.ok();
     }
 }

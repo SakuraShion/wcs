@@ -24,7 +24,6 @@ public class WcsAssembly implements Serializable {
     /**
      * 
      */
-    @TableId
     private String prems;
 
     /**

@@ -21,6 +21,24 @@
             <result property="remark" column="remark" jdbcType="VARCHAR"/>
     </resultMap>
 
+    <resultMap id="DataAndType" type="org.example.mywcs.domain.SysDictData">
+        <id property="dict_code" column="dict_code" jdbcType="BIGINT"/>
+        <result property="dict_sort" column="dict_sort" jdbcType="INTEGER"/>
+        <result property="dict_label" column="dict_label" jdbcType="VARCHAR"/>
+        <result property="dict_value" column="dict_value" jdbcType="VARCHAR"/>
+        <result property="dict_type" column="dict_type" jdbcType="VARCHAR"/>
+        <result property="css_class" column="css_class" jdbcType="VARCHAR"/>
+        <result property="list_class" column="list_class" jdbcType="VARCHAR"/>
+        <result property="is_default" column="is_default" jdbcType="CHAR"/>
+        <result property="status" column="status" jdbcType="CHAR"/>
+        <result property="create_by" column="create_by" jdbcType="VARCHAR"/>
+        <result property="create_time" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="update_by" column="update_by" jdbcType="VARCHAR"/>
+        <result property="update_time" column="update_time" jdbcType="TIMESTAMP"/>
+        <result property="remark" column="remark" jdbcType="VARCHAR"/>
+        <result property="dict_name" column="dict_name" jdbcType="VARCHAR"/>
+    </resultMap>
+
     <sql id="Base_Column_List">
         dict_code,dict_sort,dict_label,
         dict_value,dict_type,css_class,
@@ -28,4 +46,12 @@
         create_by,create_time,update_by,
         update_time,remark
     </sql>
+
+    <select id="selectList" resultMap="BaseResultMap">
+        select * from wcs_dept
+    </select>
+
+    <select id="selectByType" resultMap="DataAndType">
+        SELECT * FROM `sys_dict_type` a  left join sys_dict_data b on a.dict_type=b.dict_type where a.dict_type=#{type}
+    </select>
 </mapper>

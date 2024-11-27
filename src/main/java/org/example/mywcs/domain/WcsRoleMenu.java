@@ -23,7 +23,6 @@ public class WcsRoleMenu implements Serializable {
     /**
      * 菜单ID
      */
-    @TableId
     private Long menu_id;
 
     @TableField(exist = false)

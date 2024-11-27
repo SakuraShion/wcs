@@ -15,10 +15,14 @@
             <result property="msg" column="msg" jdbcType="VARCHAR"/>
             <result property="login_time" column="login_time" jdbcType="TIMESTAMP"/>
     </resultMap>
+    <parameterMap id="BaseParaMap" type="org.example.mywcs.domain.SysLogininfor">
+
+    </parameterMap>
 
     <sql id="Base_Column_List">
         info_id,user_name,ipaddr,
         login_location,browser,os,
         status,msg,login_time
     </sql>
+
 </mapper>

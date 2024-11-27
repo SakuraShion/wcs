@@ -1,10 +1,13 @@
 package org.example.mywcs.domain.vo;
 
 import lombok.Data;
-import org.example.mywcs.domain.WcsDept;
+
 import org.example.mywcs.domain.WcsRole;
+import org.example.mywcs.domain.node.DeptNode;
+import org.example.mywcs.domain.node.MenuNode;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Author：hb
@@ -106,6 +109,8 @@ public class UserVo {
      */
     private String remark;
 
-    private WcsDept deptVo;
-    private WcsRole roleVo;
+    private List<DeptNode> deptNode;
+    private List<MenuNode> menuNode;
+
+    private WcsRole wcsRole;
 }

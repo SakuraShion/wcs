@@ -1,5 +1,6 @@
 package org.example.mywcs.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.example.mywcs.domain.WcsLifterInfo;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -9,6 +10,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2024-11-26 11:21:10
 * @Entity generator.domain.WcsLifterInfo
 */
+@Mapper
 public interface WcsLifterInfoMapper extends BaseMapper<WcsLifterInfo> {
 
 }

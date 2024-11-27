@@ -1,8 +1,10 @@
 package org.example.mywcs.service.impl;
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.example.mywcs.domain.*;
+import org.example.mywcs.domain.node.DeptNode;
 import org.example.mywcs.domain.node.MenuNode;
 import org.example.mywcs.domain.vo.UserVo;
 import org.example.mywcs.mapper.*;
@@ -22,15 +24,15 @@ import java.util.function.Consumer;
 @Service
 public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
     implements WcsUserService{
-    @Autowired(required = false)
+    @Autowired
     private WcsUserMapper wcsUserMapper;
-    @Autowired(required = false)
+    @Autowired
     private WcsDeptMapper wcsDeptMapper;
-    @Autowired(required = false)
+    @Autowired
     private WcsRoleMapper wcsRoleMapper;
-    @Autowired(required = false)
+    @Autowired
     private WcsUserRoleMapper wcsUserRoleMapper;
-    @Autowired(required = false)
+    @Autowired
     private WcsMenuMapper wcsMenuMapper;
 
 
@@ -45,15 +47,14 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
 
     @Override
     public UserVo getDetails(String number) {
-        QueryWrapper<WcsUser> queryWrapper=new QueryWrapper<>();
-        queryWrapper.eq("id", number);
-        WcsUser wcsUser = wcsUserMapper.selectOne(queryWrapper);
+        WcsUser wcsUser = wcsUserMapper.select(number);
         QueryWrapper<WcsDept> deptWrapper=new QueryWrapper<>();
-        deptWrapper.eq("id", wcsUser.getDept_id());
+        deptWrapper.eq("dept_id", wcsUser.getDept_id());
         WcsDept wcsDept = wcsDeptMapper.selectOne(deptWrapper);
         UserVo user = new UserVo();
         user.setAvatar(wcsUser.getAvatar());
         user.setEmail(wcsUser.getEmail());
+        user.setUser_id(wcsUser.getUser_id());
         user.setPhonenumber(wcsUser.getPhonenumber());
         user.setUser_name(wcsUser.getUser_name());
         user.setNick_name(wcsUser.getNick_name());
@@ -61,27 +62,33 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
         user.setCreate_by(wcsUser.getCreate_by());
         user.setUpdate_by(wcsUser.getUpdate_by());
         user.setDept_id(wcsUser.getDept_id());
-        user.setDeptVo(wcsDept);
         user.setLogin_date(wcsUser.getLogin_date());
         user.setEmail(wcsUser.getEmail());
         user.setRemark(wcsUser.getRemark());
         user.setSex(wcsUser.getSex());
         user.setUser_type(wcsUser.getUser_type());
-        QueryWrapper<WcsRole> wcsRoleQueryWrapper=new QueryWrapper<>();
-        WcsRole wcsRole = wcsRoleMapper.selectOne(wcsRoleQueryWrapper);
-        user.setRoleVo(wcsRole);
+
+        Integer i = wcsUserRoleMapper.selectRole(String.valueOf(user.getUser_id()));
+
+        WcsRole wcsRole = wcsRoleMapper.select(i);
+        user.setWcsRole(wcsRole);
         return user;
     }
 
     @Override
     public List<MenuNode> getRouters(String number) {
-        QueryWrapper<WcsUserRole> wcsRoleQueryWrapper=new QueryWrapper<>();
-        wcsRoleQueryWrapper.eq("user_id", number);
-        WcsUserRole wcsUserRole = wcsUserRoleMapper.selectOne(wcsRoleQueryWrapper);
+
+        WcsUserRole wcsUserRole = wcsUserRoleMapper.selectByUserId(Long.valueOf(number));
         List<String> menuId =wcsUserRoleMapper.getRoleId(wcsUserRole.getRole_id());
         QueryWrapper<WcsMenu> wcsMenuQueryWrapper=new QueryWrapper<>();
-        List<MenuNode> wcsMenus = wcsMenuMapper.selectList(menuId);
-        List<MenuNode> wcsMenus1 = this.recursionBuildingGroup(wcsMenus , wcsMenus.get(0).getMenu_id());
+        List<WcsMenu> wcsMenus = wcsMenuMapper.selectList(menuId);
+        List<MenuNode> menuNodes=new ArrayList<>();
+        for (WcsMenu wcsMenuNode : wcsMenus) {
+            MenuNode menuNode=new MenuNode();
+            BeanUtil.copyProperties(wcsMenuNode, menuNode);
+            menuNodes.add(menuNode);
+        }
+        List<MenuNode> wcsMenus1 = this.recursionBuildingGroup(menuNodes , menuNodes.get(0).getMenu_id());
         return wcsMenus1;
     }
 
@@ -89,8 +96,61 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
     public List<UserVo> listAll() {
         List<WcsUserRole> userRoles=wcsUserRoleMapper.selectAllUserMenuId();
         QueryWrapper<WcsUserRole>queryWrapper=new QueryWrapper<>();
+        List<UserVo> userVos = new ArrayList<>();
+        userRoles.stream().forEach(wcsUserRole -> {
+            UserVo vo=new UserVo();
+            List<String> menuId = wcsUserRoleMapper.getRoleId(wcsUserRole.getRole_id());
+            List<WcsMenu> wcsMenus = wcsMenuMapper.selectList(menuId);
+            //菜单树
+            List<MenuNode> menuNodes=new ArrayList<>();
+            for (WcsMenu wcsMenu : wcsMenus) {
+                MenuNode menuNode=new MenuNode();
+                BeanUtil.copyProperties(wcsMenu,menuNode);
+                menuNodes.add(menuNode);
+            }
+            WcsUser wcsUser = wcsUserMapper.select(String.valueOf(wcsUserRole.getUser_id()));
+            List<MenuNode> wcsMenus1 = this.recursionBuildingGroup(menuNodes , wcsMenus.get(0).getMenu_id());
+            vo.setMenuNode(wcsMenus1);
+            //部门树
 
-        return null;
+            WcsDept wcsDepts = wcsDeptMapper.selectDeptByUser(wcsUser.getDept_id());
+            List<WcsDept> wcsDepts1 = wcsDeptMapper.selectList();
+            List<DeptNode> deptNodes=new ArrayList<>(wcsDepts1.size());
+            for (WcsDept wcsDept : wcsDepts1){
+                DeptNode deptNode=new DeptNode();
+                BeanUtil.copyProperties(wcsDept,deptNode);
+                deptNodes.add(deptNode);
+            }
+            List<DeptNode> deptNodes1 = this.recursionBuildingGroupDept(deptNodes, wcsUser.getDept_id());
+            vo.setDeptNode(deptNodes1);
+
+
+            vo.setAvatar(wcsUser.getAvatar());
+            vo.setEmail(wcsUser.getEmail());
+            vo.setPhonenumber(wcsUser.getPhonenumber());
+            vo.setUser_name(wcsUser.getUser_name());
+            vo.setNick_name(wcsUser.getNick_name());
+            vo.setDel_flag(wcsUser.getDel_flag());
+            vo.setCreate_by(wcsUser.getCreate_by());
+            vo.setUpdate_by(wcsUser.getUpdate_by());
+            vo.setDept_id(wcsUser.getDept_id());
+            vo.setLogin_date(wcsUser.getLogin_date());
+            vo.setRemark(wcsUser.getRemark());
+            vo.setSex(wcsUser.getSex());
+            vo.setUser_type(wcsUser.getUser_type());
+
+
+            userVos.add(vo);
+        });
+
+
+        return userVos;
+    }
+
+    @Override
+    public boolean updatePassword(Long id, String password) {
+        int i=wcsUserMapper.updatePassword(id, password);
+        return false;
     }
 
     private List<MenuNode> recursionBuildingGroup(List<MenuNode> wcsMenus, Long i) {
@@ -100,8 +160,7 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
             //判断此节点的父ID是否等于要得到的节点
             if (res.getParent_id().equals(i)) {
                 //递归调用当前的ID是否存在子节点
-                List<MenuNode> list = recursionBuildingGroup
-                        (wcsMenus, res.getMenu_id());
+                List<MenuNode> list = recursionBuildingGroup(wcsMenus, res.getMenu_id());
                 //得到对应的子节点的集合
                 res.setChildren(list);
                 sonList.add(res);
@@ -109,6 +168,23 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
         }
         return sonList;
     }
+
+    private List<DeptNode> recursionBuildingGroupDept(List<DeptNode> deptMenus, Long i) {
+        List<DeptNode> sonList = new ArrayList<>();
+        //迭代数据得到所有节点
+        for (DeptNode res : deptMenus) {
+            //判断此节点的父ID是否等于要得到的节点
+            if (res.getParent_id().equals(i)) {
+                //递归调用当前的ID是否存在子节点
+                List<DeptNode> list = recursionBuildingGroupDept(deptMenus, res.getDept_id());
+                //得到对应的子节点的集合
+                res.setChildren(list);
+                sonList.add(res);
+            }
+        }
+        return sonList;
+    }
+
 }
 
 

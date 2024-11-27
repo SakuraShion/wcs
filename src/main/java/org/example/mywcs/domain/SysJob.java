@@ -24,13 +24,11 @@ public class SysJob implements Serializable {
     /**
      * 任务名称
      */
-    @TableId
     private String job_name;
 
     /**
      * 任务组名
      */
-    @TableId
     private String job_group;
 
     /**

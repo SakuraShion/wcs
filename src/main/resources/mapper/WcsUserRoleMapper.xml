@@ -17,7 +17,14 @@
         select menu_id from wcs_role_menu where role_id=#{roleId}
     </select>
 
-    <select id="selectAllUserMenuId" resultType="org.example.mywcs.domain.WcsUserRole">
+    <select id="selectAllUserMenuId" resultMap="BaseResultMap">
         SELECT * FROM `wcs_user_role` where user_id in(SELECT user_id from wcs_user)
             </select>
+    <select id="selectRole" resultType="Integer">
+        select role_id from wcs_user_role where user_id=#{userId}
+    </select>
+
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        select * from wcs_user_role where user_id=#{userId}
+    </select>
 </mapper>

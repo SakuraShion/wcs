@@ -6,7 +6,7 @@
 
     <resultMap id="BaseResultMap" type="org.example.mywcs.domain.WcsRole">
             <id property="role_id" column="role_id" jdbcType="BIGINT"/>
-            <result property="role_name" column="role_name" jdbcType="VARCHAR"/>
+            <result property="roleName" column="role_name" jdbcType="VARCHAR"/>
             <result property="role_key" column="role_key" jdbcType="VARCHAR"/>
             <result property="role_sort" column="role_sort" jdbcType="INTEGER"/>
             <result property="data_scope" column="data_scope" jdbcType="CHAR"/>
@@ -28,6 +28,10 @@
         create_by,create_time,update_by,
         update_time,remark
     </sql>
+
+    <select id="select" resultMap="BaseResultMap">
+        select * from wcs_role where role_id=#{roldId}
+    </select>
 
 
 </mapper>

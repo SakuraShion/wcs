@@ -21,4 +21,6 @@ public interface WcsUserService extends IService<WcsUser> {
     List<MenuNode> getRouters(String number);
 
     List<UserVo> listAll();
+
+    boolean updatePassword(Long id, String password);
 }

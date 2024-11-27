@@ -23,7 +23,6 @@ public class WcsUserRole implements Serializable {
     /**
      * 角色ID
      */
-    @TableId
     private Long role_id;
 
     @TableField(exist = false)

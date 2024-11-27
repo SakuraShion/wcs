@@ -1,5 +1,8 @@
 package org.example.mywcs.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+import org.example.mywcs.domain.WcsRole;
 import org.example.mywcs.domain.WcsUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
@@ -9,8 +12,11 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 * @createDate 2024-11-26 11:21:10
 * @Entity generator.domain.WcsUser
 */
+@Mapper
 public interface WcsUserMapper extends BaseMapper<WcsUser> {
+    WcsUser select(String userId);
 
+    int updatePassword(@Param("id") Long id,@Param("password") String password);
 }
 
 

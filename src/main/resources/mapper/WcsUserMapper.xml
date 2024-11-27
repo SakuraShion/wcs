@@ -35,4 +35,12 @@
         create_time,update_by,update_time,
         remark
     </sql>
+
+    <select id="select" resultMap="BaseResultMap">
+        select * from wcs_user where user_id=#{userId}
+    </select>
+
+    <insert id="updatePassword">
+        update wcs_user <set>password=#{password}</set> where user_id=#{id}
+    </insert>
 </mapper>

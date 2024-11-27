@@ -34,11 +34,10 @@
         update_by,update_time,remark
     </sql>
 
-    <select id="selectList" resultType="org.example.mywcs.domain.node.MenuNode">
-        select * from  wcs_menu where menu_id in
-        <foreach collection="id" item="item" open="menu_id in(" separator="," close=")">
-            #{item}
+    <select id="selectList" resultMap="BaseResultMap">
+        SELECT * FROM wcs_menu WHERE menu_id IN
+        <foreach collection="list" item="id" open="(" separator="," close=")">
+            #{id}
         </foreach>
-
     </select>
 </mapper>
