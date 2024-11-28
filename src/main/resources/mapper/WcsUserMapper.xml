@@ -43,4 +43,8 @@
     <insert id="updatePassword">
         update wcs_user <set>password=#{password}</set> where user_id=#{id}
     </insert>
+
+    <select id="selectList" resultMap="BaseResultMap">
+        select * from wcs_user
+    </select>
 </mapper>

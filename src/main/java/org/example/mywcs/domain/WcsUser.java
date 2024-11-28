@@ -1,5 +1,6 @@
 package org.example.mywcs.domain;
 
+import com.alibaba.excel.annotation.ExcelProperty;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -29,11 +30,13 @@ public class WcsUser implements Serializable {
     /**
      * 用户账号
      */
+    @ExcelProperty(value="用户名",index = 0)
     private String user_name;
 
     /**
      * 用户昵称
      */
+    @ExcelProperty(value="别名")
     private String nick_name;
 
     /**
@@ -44,6 +47,7 @@ public class WcsUser implements Serializable {
     /**
      * 用户邮箱
      */
+    @ExcelProperty(value = "邮箱",index = 1)
     private String email;
 
     /**
@@ -64,6 +68,7 @@ public class WcsUser implements Serializable {
     /**
      * 密码
      */
+    @ExcelProperty(value = "密码",index=2)
     private String password;
 
     /**

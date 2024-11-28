@@ -93,6 +93,12 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
     }
 
     @Override
+    public List<WcsUser> select() {
+        List<WcsUser> wcsUsers = wcsUserMapper.selectList();
+        return wcsUsers;
+    }
+
+    @Override
     public List<UserVo> listAll() {
         List<WcsUserRole> userRoles=wcsUserRoleMapper.selectAllUserMenuId();
         QueryWrapper<WcsUserRole>queryWrapper=new QueryWrapper<>();
@@ -168,6 +174,7 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
         }
         return sonList;
     }
+
 
     private List<DeptNode> recursionBuildingGroupDept(List<DeptNode> deptMenus, Long i) {
         List<DeptNode> sonList = new ArrayList<>();
