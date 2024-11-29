@@ -25,4 +25,8 @@
         gridz,create_by,create_time,
         update_by,update_time,remark
     </sql>
+
+    <select id="selectList" resultMap="BaseResultMap">
+        select * from wcs_zone_rule
+    </select>
 </mapper>

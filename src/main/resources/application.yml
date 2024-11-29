@@ -9,13 +9,18 @@ spring:
     multipart:
       max-file-size: 10MB  		# 设置单个文件最大大小为10MB
       max-request-size: 100MB
-
   redis:
     timeout:
        connection: 10000
        socket: 20000
     port: 6379
     host: localhost
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 
 minio:
   endpoint: http://127.0.0.1:9090

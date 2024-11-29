@@ -3,6 +3,10 @@ package org.example.mywcs.mapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.example.mywcs.domain.WcsZoneRule;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.example.mywcs.domain.vo.RuleZoneVo;
+
+import java.util.List;
+import java.util.Map;
 
 /**
 * @author 15268
@@ -12,7 +16,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 */
 @Mapper
 public interface WcsZoneRuleMapper extends BaseMapper<WcsZoneRule> {
-
+    List<WcsZoneRule> selectList();
 }
 
 

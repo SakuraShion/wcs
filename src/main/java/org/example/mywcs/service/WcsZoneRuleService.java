@@ -2,6 +2,9 @@ package org.example.mywcs.service;
 
 import org.example.mywcs.domain.WcsZoneRule;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.example.mywcs.domain.vo.RuleZoneVo;
+
+import java.util.List;
 
 /**
 * @author 15268
@@ -10,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 */
 public interface WcsZoneRuleService extends IService<WcsZoneRule> {
 
+    List<RuleZoneVo> selectList(int pageNum,int pageSize);
 }
