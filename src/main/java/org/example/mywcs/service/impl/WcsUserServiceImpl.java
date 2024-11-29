@@ -1,20 +1,32 @@
 package org.example.mywcs.service.impl;
 
+import ch.qos.logback.classic.html.UrlCssBuilder;
 import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.minio.PutObjectArgs;
+import io.minio.errors.*;
 import org.example.mywcs.domain.*;
 import org.example.mywcs.domain.node.DeptNode;
 import org.example.mywcs.domain.node.MenuNode;
 import org.example.mywcs.domain.vo.UserVo;
 import org.example.mywcs.mapper.*;
 import org.example.mywcs.service.WcsUserService;
+import org.example.mywcs.untils.MinioUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Consumer;
+
+import static org.example.mywcs.untils.MinioUtil.minioUtil;
 
 /**
 * @author 15268
@@ -159,6 +171,18 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
         return false;
     }
 
+    @Override
+    public String upload(MultipartFile file) throws IOException, ServerException, InvalidBucketNameException, InsufficientDataException, ErrorResponseException, InvalidExpiresRangeException, NoSuchAlgorithmException, InvalidKeyException, InvalidResponseException, XmlParserException, InternalException {
+        String s = MinioUtil.uploadFile(file.getInputStream(), "myfile", file.getOriginalFilename());
+        String[] split = s.split("/");
+        String sb=new String();
+        sb+=split[split.length-2];
+        sb+="/";
+        sb+=split[split.length-1];
+        String getpresign = MinioUtil.getpresign(sb);
+        return getpresign;
+    }
+
     private List<MenuNode> recursionBuildingGroup(List<MenuNode> wcsMenus, Long i) {
         List<MenuNode> sonList = new ArrayList<>();
         //迭代数据得到所有节点
@@ -192,7 +216,11 @@ public class WcsUserServiceImpl extends ServiceImpl<WcsUserMapper, WcsUser>
         return sonList;
     }
 
+
+
 }
+
+
 
 
 
